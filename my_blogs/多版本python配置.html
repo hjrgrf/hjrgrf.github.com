@@ -1,0 +1,518 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>多版本python配置</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>笔记本电脑中多版本python的配置</h1>
+<p>在我的笔记本中，已经安装了两个版本的python：</p>
+<blockquote>
+<p>python2.7.11</p>
+<p>python3.5.0b2</p>
+</blockquote>
+<p>因为首先安装了python3，因此系统的环境配置中保留了python3，但是没有python2，网上查设置办法，可以分成两步吧：</p>
+<ol>
+<li>将两个版本python的路径都加入到<em>我的电脑-属性-高级-环境变量-path</em>中；</li>
+<li>将分别将两个版本安装目录下的python.exe修改为python2.exe和python3.exe。</li>
+</ol>
+<p>这样以后在调用时可以直接在cmd中通过<code>python2</code>或者<code>python3</code>调用两个版本，下面使一些抄过来的版本差别可供后日参考。</p>
+<h2>1.性能</h2>
+<p>Py3.0运行 pystone benchmark的速度比Py2.5慢30%。Guido认为Py3.0有极大的优化空间，在字符串和整形操作上可以取得很好的优化结果。</p>
+<p>Py3.1性能比Py2.5慢15%，还有很大的提升空间。 </p>
+<h2>2.编码</h2>
+<p>Py3.X源码文件默认使用utf-8编码，这就使得以下代码是合法的： </p>
+<pre><code>&gt;&gt;&gt; 中国 = 'china' 
+&gt;&gt;&gt;print(中国) 
+china 
+</code></pre>
+
+<h2>3.语法</h2>
+<p>1）去除了&lt;&gt;，全部改用!=</p>
+<p>2）去除``，全部改用repr() </p>
+<p>3）关键词加入as 和with，还有True,False,None </p>
+<p>4）整型除法返回浮点数，要得到整型结果，请使用// </p>
+<p>5）加入nonlocal语句。使用noclocal x可以直接指派外围（非全局）变量 </p>
+<p>6）去除print语句，加入print()函数实现相同的功能。同样的还有exec语句，已经改为exec()函数 
+   例如： </p>
+<pre><code> 2.X: print &quot;The answer is&quot;, 2*2 
+ 3.X: print(&quot;The answer is&quot;, 2*2) 
+ 2.X: print x,                              # 使用逗号结尾禁止换行 
+ 3.X: print(x, end=&quot; &quot;)                     # 使用空格代替换行 
+ 2.X: print                                 # 输出新行 
+ 3.X: print()                               # 输出新行 
+ 2.X: print &gt;&gt;sys.stderr, &quot;fatal error&quot; 
+ 3.X: print(&quot;fatal error&quot;, file=sys.stderr) 
+ 2.X: print (x, y)                          # 输出repr((x, y)) 
+ 3.X: print((x, y))                         # 不同于print(x, y)! 
+</code></pre>
+
+<p>7）改变了顺序操作符的行为，例如x&lt;y，当x和y类型不匹配时抛出TypeError而不是返回随即的 bool值  </p>
+<p>8）输入函数改变了，删除了raw_input，用input代替： </p>
+<pre><code>2.X:guess = int(raw_input('Enter an integer : ')) # 读取键盘输入的方法 
+3.X:guess = int(input('Enter an integer : '))
+</code></pre>
+
+<p>9）去除元组参数解包。不能def(a, (b, c)):pass这样定义函数了 </p>
+<p>10）新式的8进制字变量，相应地修改了oct()函数。 </p>
+<blockquote>
+<p>2.X的方式如下：</p>
+<pre><code> &gt;&gt;&gt; 0666 
+ 438 
+ &gt;&gt;&gt; oct(438) 
+ '0666' 
+</code></pre>
+
+<p>3.X这样： </p>
+<pre><code> &gt;&gt;&gt; 0666 
+ SyntaxError: invalid token (&lt;pyshell#63&gt;, line 1) 
+ &gt;&gt;&gt; 0o666 
+ 438 
+ &gt;&gt;&gt; oct(438) 
+ '0o666' 
+</code></pre>
+
+</blockquote>
+<p>11）增加了 2进制字面量和bin()函数 </p>
+<pre><code>&gt;&gt;&gt; bin(438) 
+'0b110110110' 
+&gt;&gt;&gt; _438 = '0b110110110' 
+&gt;&gt;&gt; _438 
+'0b110110110' 
+</code></pre>
+
+<p>12）扩展的可迭代解包。在Py3.X 里，a, b, *rest = seq和 *rest, a = seq都是合法的，只要求两点：rest是list对象和seq是可迭代的。 </p>
+<p>13）新的super()，可以不再给super()传参数， </p>
+<pre><code>&gt;&gt;&gt; class C(object): 
+      def __init__(self, a): 
+         print('C', a) 
+&gt;&gt;&gt; class D(C): 
+      def __init(self, a): 
+         super().__init__(a) # 无参数调用super() 
+&gt;&gt;&gt; D(8) 
+C 8 
+&lt;__main__.D object at 0x00D7ED90&gt; 
+</code></pre>
+
+<p>14）新的metaclass语法： </p>
+<pre><code>class Foo(*bases, **kwds): 
+  pass 
+</code></pre>
+
+<p>15）支持class decorator。用法与函数decorator一样： </p>
+<pre><code>&gt;&gt;&gt; def foo(cls_a): 
+      def print_func(self): 
+         print('Hello, world!') 
+      cls_a.print = print_func 
+      return cls_a 
+&gt;&gt;&gt; @foo 
+class C(object): 
+  pass 
+&gt;&gt;&gt; C().print() 
+Hello, world! 
+</code></pre>
+
+<p>class decorator可以用来玩玩狸猫换太子的大把戏。更多请参阅PEP 3129 </p>
+<h2>4.字符串和字节串</h2>
+<p>1）现在字符串只有str一种类型，但它跟2.x版本的unicode几乎一样。</p>
+<p>2）关于字节串，请参阅“数据类型”的第2条目 </p>
+<h2>5.数据类型</h2>
+<p>1）Py3.X去除了long类型，现在只有一种整型——int，但它的行为就像2.X版本的long </p>
+<p>2）新增了bytes类型，对应于2.X版本的八位串，定义一个bytes字面量的方法如下： </p>
+<pre><code>&gt;&gt;&gt; b = b'china' 
+&gt;&gt;&gt; type(b) 
+&lt;type 'bytes'&gt; 
+</code></pre>
+
+<p>str对象和bytes对象可以使用.encode() (str -&gt; bytes) or .decode() (bytes -&gt; str)方法相互转化。</p>
+<pre><code>&gt;&gt;&gt; s = b.decode() 
+&gt;&gt;&gt; s 
+'china' 
+&gt;&gt;&gt; b1 = s.encode() 
+&gt;&gt;&gt; b1 
+b'china' 
+</code></pre>
+
+<p>3）dict的.keys()、.items 和.values()方法返回迭代器，而之前的iterkeys()等函数都被废弃。同时去掉的还有 dict.has_key()，用 in替代它吧 </p>
+<h2>6.面向对象</h2>
+<p>1）引入抽象基类（Abstraact Base Classes，ABCs）。 </p>
+<p>2）容器类和迭代器类被ABCs化，所以cellections模块里的类型比Py2.5多了很多。 </p>
+<pre><code>&gt;&gt;&gt; import collections 
+&gt;&gt;&gt; print('\n'.join(dir(collections))) 
+Callable 
+Container 
+Hashable 
+ItemsView 
+Iterable 
+Iterator 
+KeysView 
+Mapping 
+MappingView 
+MutableMapping 
+MutableSequence 
+MutableSet 
+NamedTuple 
+Sequence 
+Set 
+Sized 
+ValuesView 
+__all__ 
+__builtins__ 
+__doc__ 
+__file__ 
+__name__ 
+_abcoll 
+_itemgetter 
+_sys 
+defaultdict 
+deque 
+</code></pre>
+
+<p>另外，数值类型也被ABCs化。关于这两点，请参阅 PEP 3119和PEP 3141。 </p>
+<p>3）迭代器的next()方法改名为<strong>next</strong>()，并增加内置函数next()，用以调用迭代器的<strong>next</strong>()方法 </p>
+<p>4）增加了@abstractmethod和 @abstractproperty两个 decorator，编写抽象方法（属性）更加方便。 </p>
+<h2>7.异常</h2>
+<p>1）所以异常都从 BaseException继承，并删除了StardardError </p>
+<p>2）去除了异常类的序列行为和.message属性 </p>
+<p>3）用 raise Exception(args)代替 raise Exception, args语法 </p>
+<p>4）捕获异常的语法改变，引入了as关键字来标识异常实例，在Py2.5中： </p>
+<pre><code>&gt;&gt;&gt; try: 
+...    raise NotImplementedError('Error') 
+... except NotImplementedError, error:
+
+...    print error.message 
+... 
+Error 
+</code></pre>
+
+<p>在Py3.0中： </p>
+<pre><code>&gt;&gt;&gt; try: 
+      raise NotImplementedError('Error') 
+    except NotImplementedError as error: #注意这个 as 
+      print(str(error)) 
+Error 
+</code></pre>
+
+<p>5）异常链，因为<strong>context</strong>在3.0a1版本中没有实现 </p>
+<h2>8.模块变动</h2>
+<p>1）移除了cPickle模块，可以使用pickle模块代替。最终我们将会有一个透明高效的模块。 </p>
+<p>2）移除了imageop模块 </p>
+<p>3）移除了 audiodev, Bastion, bsddb185, exceptions, linuxaudiodev, md5, MimeWriter, mimify, popen2, rexec, sets, sha, stringold, strop, sunaudiodev, timing和xmllib模块 </p>
+<p>4）移除了bsddb模块(单独发布，可以从http://www.jcea.es/programacion/pybsddb.htm获取) </p>
+<p>5）移除了new模块 </p>
+<p>6）os.tmpnam()和os.tmpfile()函数被移动到tmpfile模块下 </p>
+<p>7）tokenize模块现在使用bytes工作。主要的入口点不再是generate_tokens，而是tokenize.tokenize() </p>
+<h2>9.其它</h2>
+<p>1）xrange() 改名为range()，要想使用range()获得一个list，必须显式调用： </p>
+<pre><code>&gt;&gt;&gt; list(range(10)) 
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
+</code></pre>
+
+<p>2）bytes对象不能hash，也不支持 b.lower()、b.strip()和b.split()方法，但对于后两者可以使用 b.strip(b’\n\t\r \f’)和b.split(b’ ‘)来达到相同目的 </p>
+<p>3）zip()、map()和filter()都返回迭代器。而apply()、 callable()、coerce()、 execfile()、reduce()和reload()函数都被去除了，现在可以使用hasattr()来替换 callable(). hasattr()的语法如：hasattr(string, '<strong>name</strong>')</p>
+<p>4）string.letters和相关的.lowercase和.uppercase被去除，请改用string.ascii_letters 等 </p>
+<p>5）如果x &lt; y的不能比较，抛出TypeError异常。2.x版本是返回伪随机布尔值的 </p>
+<p>6）<strong>getslice</strong>系列成员被废弃。a[i:j]根据上下文转换为a.<strong>getitem</strong>(slice(I, j))或 <strong>setitem</strong>和 <strong>delitem</strong>调用 </p>
+<p>7）file类被废弃，在Py2.5中： </p>
+<pre><code>&gt;&gt;&gt; file 
+&lt;type 'file'&gt; 
+</code></pre>
+
+<p>在Py3.X中： </p>
+<pre><code>&gt;&gt;&gt; file 
+Traceback (most recent call last): 
+File &quot;&lt;pyshell#120&gt;&quot;, line 1, in &lt;module&gt; 
+   file 
+NameError: name 'file' is not defined
+</code></pre>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
