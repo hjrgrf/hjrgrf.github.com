@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>python-urllib2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>Python urllib2</h1>
+<p>urllib2是Python的一个获取URLs(Uniform Resource Locators)的组件。他以urlopen函数的形式提供了一个非常简单的接口，这是具有利用不同协议获取URLs的能力，他同样提供了一个比较复杂的接口来处理一般情况，例如：基础验证，cookies,代理和其他。</p>
+<p>它们通过handlers和openers的对象提供。
+urllib2支持获取不同格式的URLs(在URL的&quot;:&quot;前定义的字串,例如：&quot;ftp&quot;是&quot;ftp:python.ort/&quot;的前缀),它们利用它们相关网络协议(例如FTP,HTTP)进行获取。这篇教程关注最广泛的应用--HTTP。</p>
+<p>对于简单的应用，urlopen是非常容易使用的。但当你在打开HTTP的URLs时遇到错误或异常，你将需要一些超文本传输协议(HTTP)的理解。</p>
+<p>最权威的HTTP文档当然是RFC 2616(http://rfc.net/rfc2616.html)。这是一个技术文档，所以并不易于阅读。这篇HOWTO教程的目的是展现如何使用urllib2,并提供足够的HTTP细节来帮助你理解。他并不是urllib2的文档说明，而是起一个辅助作用。</p>
+<h2>获取 URLs</h2>
+<p>最简单的使用urllib2将如下所示</p>
+<pre><code>import urllib2 
+response = urllib2.urlopen('http://python.org/') 
+html = response.read()
+</code></pre>
+
+<p>urllib2的很多应用就是那么简单(记住，除了&quot;http:&quot;,URL同样可以使用&quot;ftp:&quot;,&quot;file:&quot;等等来替代)。但这篇文章是教授HTTP的更复杂的应用。</p>
+<p>HTTP是基于请求和应答机制的--客户端提出请求，服务端提供应答。urllib2用一个Request对象来映射你提出的HTTP请求,在它最简单的使用形式中你将用你要请求的地址创建一个Request对象，通过调用urlopen并传入Request对象，将返回一个相关请求response对象，这个应答对象如同一个文件对象，所以你可以在Response中调用.read()。</p>
+<pre><code>import urllib2 
+req = urllib2.Request('http://www.pythontab.com') 
+response = urllib2.urlopen(req) 
+the_page = response.read()
+</code></pre>
+
+<p>记得urllib2使用相同的接口处理所有的URL头。例如你可以像下面那样创建一个ftp请求。
+req = urllib2.Request('ftp://example.com/')</p>
+<p>在HTTP请求时，允许你做额外的两件事。首先是你能够发送data表单数据，其次你能够传送额外的关于数据或发送本身的信息(&quot;metadata&quot;)到服务器，此数据作为HTTP的&quot;headers&quot;来发送。</p>
+<p>接下来让我们看看这些如何发送的吧。</p>
+<h2>Data数据</h2>
+<p>有时候你希望发送一些数据到URL(通常URL与CGI[通用网关接口]脚本，或其他WEB应用程序挂接)。在HTTP中,这个经常使用熟知的POST请求发送。这个通常在你提交一个HTML表单时由你的浏览器来做。</p>
+<p>并不是所有的POSTs都来源于表单，你能够使用POST提交任意的数据到你自己的程序。一般的HTML表单，data需要编码成标准形式。然后做为data参数传到Request对象。编码工作使用urllib的函数而非urllib2。</p>
+<pre><code>import urllib 
+import urllib2 
+url = 'http://www.pythontab.com' 
+values = {'name' : 'Michael Foord', 
+          'location' : 'pythontab', 
+          'language' : 'Python' } 
+data = urllib.urlencode(values) 
+req = urllib2.Request(url, data) 
+response = urllib2.urlopen(req) 
+the_page = response.read()
+</code></pre>
+
+<p>记住有时需要别的编码(例如从HTML上传文件--看http://www.w3.org/TR/REC-html40/interact/forms.html#h-17.13 HTML Specification, Form Submission的详细说明)。</p>
+<p>如ugoni没有传送data参数，urllib2使用GET方式的请求。GET和POST请求的不同之处是POST请求通常有&quot;副作用&quot;，它们会由于某种途径改变系统状态(例如提交成堆垃圾到你的门口)。</p>
+<p>尽管HTTP标准说的很清楚POSTs通常会产生副作用，GET请求不会产生副作用，但没有什么可以阻止GET请求产生副作用，同样POST请求也可能不产生副作用。Data同样可以通过在Get请求的URL本身上面编码来传送。</p>
+<p>可看如下例子</p>
+<pre><code>&gt;&gt;&gt; import urllib2 
+&gt;&gt;&gt; import urllib 
+&gt;&gt;&gt; data = {} 
+&gt;&gt;&gt; data['name'] = 'Somebody Here' 
+&gt;&gt;&gt; data['location'] = 'pythontab' 
+&gt;&gt;&gt; data['language'] = 'Python' 
+&gt;&gt;&gt; url_values = urllib.urlencode(data) 
+&gt;&gt;&gt; print url_values 
+name=blueelwang+Here&amp;language=Python&amp;location=pythontab 
+&gt;&gt;&gt; url = 'http://www.pythontab.com' 
+&gt;&gt;&gt; full_url = url + '?' + url_values 
+&gt;&gt;&gt; data = urllib2.open(full_url)
+</code></pre>
+
+<h2>Headers</h2>
+<p>我们将在这里讨论特定的HTTP头，来说明怎样添加headers到你的HTTP请求。</p>
+<p>有一些站点不喜欢被程序（非人为访问）访问，或者发送不同版本的内容到不同的浏览器。默认的urllib2把自己作为“Python-urllib/x.y”(x和y是Python主版本和次版本号,例如Python-urllib/2.5)，这个身份可能会让站点迷惑，或者干脆不工作。浏览器确认自己身份是通过User-Agent头，当你创建了一个请求对象，你可以给他一个包含头数据的字典。下面的例子发送跟上面一样的内容，但把自身模拟成Internet Explorer。</p>
+<pre><code>import urllib 
+import urllib2 
+url = 'http://www.pythontab.com' 
+user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
+values = {'name' : 'Michael Foord', 
+          'location' : 'pythontab', 
+          'language' : 'Python' } 
+headers = { 'User-Agent' : user_agent } 
+data = urllib.urlencode(values) 
+req = urllib2.Request(url, data, headers) 
+response = urllib2.urlopen(req) 
+the_page = response.read()
+</code></pre>
+
+<p>response应答对象同样有两个很有用的方法。看下面的节info and geturl，我们将看到当发生错误时会发生什么。</p>
+<h3>Handle Exceptions处理异常</h3>
+<p>当urlopen不能够处理一个response时，产生urlError（不过通常的Python APIs异常如ValueError,TypeError等也会同时产生）。</p>
+<p>HTTPError是urlError的子类，通常在特定HTTP URLs中产生。</p>
+<h2>URLError</h2>
+<p>通常，URLError在没有网络连接(没有路由到特定服务器),或者服务器不存在的情况下产生。这种情况下，异常同样会带有&quot;reason&quot;属性，它是一个tuple，包含了一个错误号和一个错误信息。</p>
+<p>例如</p>
+<pre><code>&gt;&gt;&gt; req = urllib2.Request('http://www.pythontab.com') 
+&gt;&gt;&gt; try: urllib2.urlopen(req) 
+&gt;&gt;&gt; except URLError, e: 
+&gt;&gt;&gt;    print e.reason 
+&gt;&gt;&gt;(4, 'getaddrinfo failed') 
+</code></pre>
+
+<h2>HTTPError</h2>
+<p>服务器上每一个HTTP 应答对象response包含一个数字&quot;状态码&quot;。有时状态码指出服务器无法完成请求。默认的处理器会为你处理一部分这种应答(例如:假如response是一个&quot;重定向&quot;，需要客户端从别的地址获取文档，urllib2将为你处理)。其他不能处理的，urlopen会产生一个HTTPError。典型的错误包含&quot;404&quot;(页面无法找到)，&quot;403&quot;(请求禁止)，和&quot;401&quot;(带验证请求)。</p>
+<p>请看RFC 2616 第十节有所有的HTTP错误码</p>
+<p>HTTPError实例产生后会有一个整型'code'属性，是服务器发送的相关错误号。</p>
+<h2>Error Codes错误码</h2>
+<p>因为默认的处理器处理了重定向(300以外号码)，并且100-299范围的号码指示成功，所以你只能看到400-599的错误号码。</p>
+<p>BaseHTTPServer.BaseHTTPRequestHandler.response是一个很有用的应答号码字典，显示了RFC 2616使用的所有的应答号。这里为了方便重新展示该字典。</p>
+<p>当一个错误号产生后，服务器返回一个HTTP错误号，和一个错误页面。你可以使用HTTPError实例作为页面返回的应答对象response。这表示和错误属性一样，它同样包含了read,geturl,和info方法。</p>
+<pre><code>&gt;&gt;&gt; req = urllib2.Request('http://www.python.org/fish.html') 
+&gt;&gt;&gt; try: 
+&gt;&gt;&gt;     urllib2.urlopen(req) 
+&gt;&gt;&gt; except URLError, e: 
+&gt;&gt;&gt;     print e.code 
+&gt;&gt;&gt;     print e.read() 
+&gt;&gt;&gt;404 
+&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; 
+    &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt; 
+&lt;?xml-stylesheet href=&quot;./css/ht2html.css&quot; 
+    type=&quot;text/css&quot;?&gt; 
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Error 404: File Not Found&lt;/title&gt; 
+...... etc...
+</code></pre>
+
+<h2>Wrapping it Up包装</h2>
+<p>所以如果你想为HTTPError或URLError做准备，将有两个基本的办法。我则比较喜欢第二种。
+第一个：</p>
+<pre><code>from urllib2 import Request, urlopen, URLError, HTTPError 
+req = Request(someurl) 
+try: 
+    response = urlopen(req) 
+except HTTPError, e: 
+    print 'The server couldn/'t fulfill the request.' 
+    print 'Error code: ', e.code 
+except URLError, e: 
+    print 'We failed to reach a server.' 
+    print 'Reason: ', e.reason 
+else: 
+    # everything is fine
+</code></pre>
+
+<p>注意：except HTTPError 必须在第一个，否则except URLError将同样接受到HTTPError。 
+第二个：</p>
+<pre><code>from urllib2 import Request, urlopen, URLError 
+req = Request(someurl) 
+try: 
+    response = urlopen(req) 
+except URLError, e: 
+    if hasattr(e, 'reason'): 
+        print 'We failed to reach a server.' 
+        print 'Reason: ', e.reason 
+    elif hasattr(e, 'code'): 
+        print 'The server couldn/'t fulfill the request.' 
+        print 'Error code: ', e.code 
+else: 
+    # everything is fine
+</code></pre>
+
+<h2>info and geturl</h2>
+<p>urlopen返回的应答对象response(或者HTTPError实例)有两个很有用的方法info()和geturl()</p>
+<p>geturl -- 这个返回获取的真实的URL，这个很有用，因为urlopen(或者opener对象使用的)或许会有重定向。获取的URL或许跟请求URL不同。</p>
+<p>info -- 这个返回对象的字典对象，该字典描述了获取的页面情况。通常是服务器发送的特定头headers。目前是httplib.HTTPMessage 实例。</p>
+<p>经典的headers包含&quot;Content-length&quot;，&quot;Content-type&quot;，和其他。查看Quick Reference to HTTP Headers(http://www.cs.tut.fi/~jkorpela/http.html)获取有用的HTTP头列表，以及它们的解释意义。</p>
+<h2>Openers和Handlers</h2>
+<p>当你获取一个URL你使用一个opener(一个urllib2.OpenerDirector的实例，urllib2.OpenerDirector可能名字可能有点让人混淆。)正常情况下，我们使用默认opener -- 通过urlopen,但你能够创建个性的openers，Openers使用处理器handlers，所有的“繁重”工作由handlers处理。每个handlers知道如何通过特定协议打开URLs，或者如何处理URL打开时的各个方面，例如HTTP重定向或者HTTP cookies。</p>
+<p>如果你希望用特定处理器获取URLs你会想创建一个openers，例如获取一个能处理cookie的opener，或者获取一个不重定向的opener。</p>
+<p>要创建一个 opener,实例化一个OpenerDirector，然后调用不断调用.add<em>handler(some</em>handler_instance).</p>
+<p>同样，可以使用build_opener，这是一个更加方便的函数，用来创建opener对象，他只需要一次函数调用。</p>
+<p>build_opener默认添加几个处理器，但提供快捷的方法来添加或更新默认处理器。</p>
+<p>其他的处理器handlers你或许会希望处理代理，验证，和其他常用但有点特殊的情况。</p>
+<p>install_opener 用来创建（全局）默认opener。这个表示调用urlopen将使用你安装的opener。</p>
+<p>Opener对象有一个open方法，该方法可以像urlopen函数那样直接用来获取urls：通常不必调用install_opener，除了为了方便。</p>
+<h2>Basic Authentication 基本验证</h2>
+<p>为了展示创建和安装一个handler，我们将使用HTTPBasicAuthHandler，为了更加细节的描述本主题--包含一个基础验证的工作原理。</p>
+<p>请看Basic Authentication Tutorial（http://www.voidspace.org.uk/python/articles/authentication.shtml）</p>
+<p>当需要基础验证时，服务器发送一个header(401错误码) 请求验证。这个指定了scheme 和一个‘realm’，看起来像这样：Www-authenticate: SCHEME realm=&quot;REALM&quot;.</p>
+<p>例如</p>
+<blockquote>
+<p>Www-authenticate: Basic realm=&quot;cPanel Users&quot;</p>
+</blockquote>
+<p>客户端必须使用新的请求，并在请求头里包含正确的姓名和密码。这是“基础验证”，为了简化这个过程，我们可以创建一个HTTPBasicAuthHandler的实例，并让opener使用这个handler。</p>
+<p>HTTPBasicAuthHandler使用一个密码管理的对象来处理URLs和realms来映射用户名和密码。如果你知道realm(从服务器发送来的头里)是什么，你就能使用HTTPPasswordMgr。</p>
+<p>通常人们不关心realm是什么。那样的话，就能用方便的HTTPPasswordMgrWithDefaultRealm。这个将在你为URL指定一个默认的用户名和密码。这将在你为特定realm提供一个其他组合时得到提供。我们通过给realm参数指定None提供给add_password来指示这种情况。</p>
+<p>最高层次的URL是第一个要求验证的URL。你传给.add_password()更深层次的URLs将同样合适。</p>
+<pre><code># 创建一个密码管理者 
+password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm() 
+# 添加用户名和密码 
+# 如果知道 realm, 我们可以使用他代替 ``None``. 
+top_level_url = &quot;http://example.com/foo/&quot; 
+password_mgr.add_password(None, top_level_url, username, password) 
+handler = urllib2.HTTPBasicAuthHandler(password_mgr) 
+# 创建 &quot;opener&quot; (OpenerDirector 实例) 
+opener = urllib2.build_opener(handler) 
+# 使用 opener 获取一个URL 
+opener.open(a_url) 
+# 安装 opener. 
+# 现在所有调用 urllib2.urlopen 将用我们的 opener. 
+urllib2.install_opener(opener)
+</code></pre>
+
+<p>注意：以上的例子我们仅仅提供我们的HHTPBasicAuthHandler给build_opener。默认的openers有正常状况的handlers--ProxyHandler,UnknownHandler,HTTPHandler,HTTPDefaultErrorHandler, HTTPRedirectHandler, FTPHandler, FileHandler, HTTPErrorProcessor。</p>
+<p>top_level_url 实际上可以是完整URL(包含&quot;http:&quot;,以及主机名及可选的端口号)例如：http://example.com/，也可以是一个“authority”(即主机名和可选的包含端口号)例如：“example.com” or “example.com:8080”(后者包含了端口号)。权限验证，如果递交的话不能包含&quot;用户信息&quot;部分,例如:</p>
+<blockquote>
+<p>“joe@password:example.com”是错误的。</p>
+</blockquote>
+<h2>Proxies代理</h2>
+<p>urllib将自动监测你的代理设置并使用他们。这个通过ProxyHandler这个在正常处理器链中的对象来处理。通常，那工作的很好。但有时不起作用。其中一个方法便是安装我们自己的代理处理器ProxyHandler，并不定义代理。这个跟使用Basic Authentication 处理器很相似。</p>
+<pre><code>&gt;&gt;&gt; proxy_support = urllib.request.ProxyHandler({}) 
+&gt;&gt;&gt; opener = urllib.request.build_opener(proxy_support) 
+&gt;&gt;&gt; urllib.request.install_opener(opener)
+</code></pre>
+
+<p>注意：
+此时urllib.request不支持通过代理获取https地址。但，这个可以通过扩展urllib.request达到目的。
+urllib2 默认会使用环境变量 http_proxy 来设置 HTTP Proxy。如果想在程序中明确控制 Proxy，而不受环境变量的影响，可以使用下面的方式</p>
+<pre><code>import urllib2
+enable_proxy = True
+proxy_handler = urllib2.ProxyHandler({&quot;http&quot; : 'http://some-proxy.com:8080'})
+null_proxy_handler = urllib2.ProxyHandler({})
+if enable_proxy:
+    opener = urllib2.build_opener(proxy_handler)
+else:
+    opener = urllib2.build_opener(null_proxy_handler)
+urllib2.install_opener(opener)
+</code></pre>
+
+<p>这里要注意的一个细节，使用 urllib2.install<em>opener() 会设置 urllib2 的全局 opener。这样后面的使用会很方便，但不能做更细粒度的控制，比如想在程序中使用两个不同的 Proxy 设置等。比较好的做法是不使用 install</em>opener 去更改全局的设置，而只是直接调用 opener 的 open 方法代替全局的 urlopen 方法。</p>
+<h2>测试http代理的示例</h2>
+<pre><code>#! /usr/bin/env python   
+# -*- coding: utf-8 -*-   
+#@author zcwang3@gmail.com  
+#@version 2010-10-18 16:47 初始做成  
+
+import urllib2  
+import httplib  
+import datetime  
+
+#目标URL  
+targetUrl = &quot;http://www.baidu.com&quot;  
+#取多少次访问速度的平均值  
+testCount = 10  
+proxyAddrSpeedList = []  
+def openUrl(proxyAddr):  
+    totalS = 0  
+    #测试，取10次平均值  
+    for i in range(testCount):  
+        try:  
+            starttime = datetime.datetime.now()  
+            #使用无验证的代理  
+            proxy_handler = urllib2.ProxyHandler({&quot;http&quot;: proxyAddr})  
+            opener = urllib2.build_opener(proxy_handler)  
+            opener.open(targetUrl)  
+            endtime = datetime.datetime.now()  
+            print str(endtime - starttime) + &quot;|&quot; + proxyAddr  
+            totalS += (endtime - starttime).seconds * 1000 + (endtime - starttime).microseconds  
+        except urllib2.URLError,e:  
+            #输出错误信息，如果代理一直出错，该代理应该废弃  
+            print proxyAddr + &quot;|&quot; + str(e)  
+            if (str(e) == &quot;&lt;urlopen error (10054, 'Connection reset by peer')&gt;&quot;   
+                or str(e) == &quot;&lt;urlopen error (10060, 'Operation timed out')&gt;&quot;  
+                or str(e) == &quot;&lt;urlopen error (10061, 'Connection refused')&gt;&quot;  
+                or str(e) == &quot;&lt;urlopen error (10065, 'No route to host')&gt;&quot;  
+                or str(e) == &quot;HTTP Error 502: Bad Gateway&quot;  
+                or str(e) == &quot;HTTP Error 503: Service Unavailable&quot;  
+                or str(e) == &quot;HTTP Error 504: Gateway Time-out&quot;  
+                or str(e) == &quot;HTTP Error 404: Not Found&quot;  
+                ):  
+                #出错就重试  
+                openUrl(proxyAddr)  
+                return  
+        except httplib.BadStatusLine, e:  
+            print proxyAddr + &quot;|&quot; + &quot;httplib.BadStatusLine&quot;  
+            #出错就重试  
+            openUrl(proxyAddr)  
+            return  
+    print totalS  
+    #输出10次的平均值，单位秒    
+    proxyAddrSpeedList.append(str(totalS / testCount / 1000000.) + u&quot;秒|&quot; + proxyAddr)  
+
+#测试的代理地址列表，逗号分隔  
+proxyAddressArray = &quot;http://218.204.29.110:808,http//58.56.108.35:8080&quot;.split(&quot;,&quot;)  
+for p in proxyAddressArray:  
+    openUrl(p)  
+    print u&quot;已测试地址排序开始&quot;  
+    tempAddList = []  
+    tempSpeedList = []  
+    proxyAddrSpeedList.sort()  
+    for p1 in proxyAddrSpeedList:  
+        tempSpeedList.append(p1.split(&quot;|&quot;)[0])  
+        tempAddList.append(p1.split(&quot;|&quot;)[1])  
+        print p1.split(&quot;|&quot;)[1]  
+    print &quot;speed = %s&quot; %(&quot;,&quot;.join(tempSpeedList))  
+    #输出：逗号分隔的代理地址  
+    print &quot;proxyAddressArray = %s&quot; %(&quot;,&quot;.join(tempAddList))  
+    print u&quot;已测试地址排序结束&quot;  
+</code></pre>
+
+<h2>Sockets and Layers</h2>
+<p>Python支持获取网络资源是分层结构。urllib 使用http.client库，再调用socket库实现。</p>
+<p>在Python2.3你可以指定socket的等待回应超时时间。这个在需要获取网页的应用程序里很有用。默认的socket模型没有超时和挂起。现在，socket超时没有暴露给http.client或者urllib.request层。但你可以给所有的sockets设置全局的超时。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
