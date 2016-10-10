@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>ANSYS_BATCH_MODE</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://hjrgrf.github.io/stylesheets/normalize.css" media="screen">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="https://hjrgrf.github.io/stylesheets/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="https://hjrgrf.github.io/stylesheets/github-light.css" media="screen">
+</head>
+<body>
+<section class="page-header">
+  <h1 class="project-name">Jared-H's Blog</h1>
+  <h2 class="project-tagline">ANSYS_BATCH_MODE</h2>
+  <a href="https://hjrgrf.github.io" class="btn"><< Home</a>
+  <a href="https://hjrgrf.github.io/my_blogs/blogs_list.html" class="btn">< My Blogs</a>
+</section>
+<section class="main-content">
+<h1>ANSYS命令流提交指令</h1>
+<h2>ANSYS命令流简介</h2>
+<p>ANSYS命令流可以写为.mac格式的文件，并且可以在mac文件中调用其它mac文件，调用时不需要在文件名后加.mac后缀，文件名就表示函数名。</p>
+<p>命令流十分方便（貌似比ABAQUS要简单一点），因为它的文件读写，函数调用以及建模都有一些间的命令来实现，只是目前不清楚命令流会不会跟ABAQUS一样要求严格的格式。</p>
+<h2>在CMD中调用ANSYS并输入命令流计算</h2>
+<p>如果没有添加ANSYS只领到系统的环境变量PATH中，则无法直接调用ANSYS计算所输入的命令流，这时候可以直接在CMD中调用目标exe程序：</p>
+<pre><code>&quot;~PATH_TO_ANSYS\Ansys Inc\v170\ansys\Bin\winx64\ansys170.exe” -b -i myinput.inp -o myoutput.out
+</code></pre>
+
+<p>需注意，电脑中版本是17.0，如果更换版本上述代码也要更换。</p>
+<p>当然，想必我也可以将上述路径添加到PATH中，然后MATLAB直接调用所引用的函数名即可。然后就剩下一个问题，调用的参数是些什么？这里就要引用网上的资料了。</p>
+<p><tbody>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>-acc device &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Enables the use of GPU hardware to accelerate
+the analysis. See "GPU Accelerator</p>
+<p>Capability" in the Parallel Processing Guide for more
+information. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-ansexe &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>In the ANSYS Workbench environment, activates
+a custom ANSYS executable. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-b list or nolist</p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>&nbsp;<wbr>Activates the ANSYS program
+in batch mode. The options -b list or -b by itself</p>
+<p>cause the input listing to be included in the output. The -b
+nolist option causes the</p>
+<p>input listing not to be included. For more information about
+running ANSYS in batch</p>
+<p>mode, see Batch Mode. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-custom &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Calls a custom ANSYS executable. See Running
+Your Custom Executable in the</p>
+<p>Guide to ANSYS User Programmable Features for more information.
+&nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-d device &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the type of graphics device. This
+option applies only to interactive mode.</p>
+<p>For Linux systems, graphics device choices are X11, X11C, or 3D.
+For Windows</p>
+<p>systems, graphics device options are WIN32 or WIN32C, or 3D.
+&nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-db value &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Defines the portion of workspace (memory) to
+be used as the initial allocation for the</p>
+<p>database. The default is 512 MB for 64-bit machines, 256 MB for
+32-bit machines.</p>
+<p>Specify a negative number (-value) to force a fixed size
+throughout the run; useful on</p>
+<p>small memory systems. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-dir &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Defines the initial working directory. Using
+the -dir option overrides the</p>
+<p><b>ANSYS140_WORKING_DIRECTORY</b> environment variable.
+&nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-dis &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Enables Distributed ANSYS. See the Parallel
+Processing Guide for more</p>
+<p>information. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-dvt &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Enables ANSYS DesignXplorer advanced task
+(add-on). &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-dyn &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Enables LS-DYNA. Applicable only for ANSYS
+Structural and higher license levels. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-g &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Launches the ANSYS program with the Graphical
+User Interface (GUI) on. If you</p>
+<p>select this option, an X11 graphics device is assumed for Linux
+unless the -d option</p>
+<p>specifies a different device. This option is not used on Windows
+systems. To activate</p>
+<p>the GUI once ANSYS has started, you need to enter two commands
+in the ANSYS</p>
+<p>input window: <b>/SHOW</b> to define the graphics device, and
+<b>/MENU</b>,ON to activate the</p>
+<p>GUI. The -g option is valid only for interactive mode.
+<b>Note:</b> If you start ANSYS via</p>
+<p>the -g option, the program ignores any <b>/SHOW</b> command in
+the start140.ans file and</p>
+<p>displays a splash screen briefly before opening the GUI windows.
+&nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-i inputname &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the name of the file to read input
+into ANSYS for batch processing. On</p>
+<p>Linux, the preferred method to indicate an input file is
+&lt;. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-j Jobname &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the initial jobname, a name assigned
+to all files generated by the program</p>
+<p>for a specific model. If you omit the -j option, the jobname is
+assumed to be file. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-l language &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies a language file to use other than US
+English. This option is valid only if</p>
+<p>you have a translated message file in an appropriately named
+subdirectory in</p>
+<p>/ansys_inc/v140/ansys/docu (or Program Files\Ansys
+Inc\V140\ANSYS\docu on</p>
+<p>Windows systems). &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-m workspace &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the total size of the workspace
+(memory) in megabytes used for the initial</p>
+<p>allocation. If you omit the -m option, the default is 1 GB (1024
+MB) for 64-bit</p>
+<p>machines, 512 MB for 32-bit machines. Specify a negative number
+(-value) to force a</p>
+<p>fixed size throughout the run. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-machines &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the machines on which to run a
+Distributed ANSYS analysis. See Starting</p>
+<p>Distributed ANSYS in the Parallel Processing Guide for more
+information. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-mfm &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the master field name in an ANSYS
+Multi-field solver - MFX analysis. See</p>
+<p>Starting and Stopping an MFX Analysis in the Coupled-Field
+Analysis Guide for more</p>
+<p>information. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-mpi &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the type of MPI to use. See the
+Parallel Processing Guide for more</p>
+<p>information. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-mpifile &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies an existing MPI file (appfile) to be
+used in a Distributed ANSYS run. See</p>
+<p>Using MPI appfiles in the Parallel Processing Guide for more
+information. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-name value &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Defines ANSYS parameters at program start-up.
+The parameter name must be at</p>
+<p>least two characters long. For details about parameters, see the
+ANSYS Parametric</p>
+<p>Design Language Guide. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-np &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the number of processors to use when
+running Distributed ANSYS or</p>
+<p>Shared-memory ANSYS. See the Parallel Processing Guide or the
+Advanced Analysis</p>
+<p>Techniques Guide for more information. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-o outputname &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the name of the file to store the
+output from a batch execution of ANSYS.</p>
+<p>On Linux, the preferred method to indicate an output file is
+&gt;. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-p productname &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Defines which ANSYS product will run during
+the session (ANSYS Multiphysics,</p>
+<p>ANSYS Structural, etc.). For more detailed information about the
+-p option, see</p>
+<p>Choosing an ANSYS Product via Command Line.
+&nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-s read or noread &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies whether the program reads the
+start140.ans file at start-up. If you omit the</p>
+<p>-s option, ANSYS reads the start140.ans file in interactive mode
+and not in batch</p>
+<p>mode. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-schost host name &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the host machine on which the
+coupling service is running (to which the</p>
+<p>co-simulation participant/solver must connect) in a System
+Coupling analysis. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-scname name of the solver
+&nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the unique name used by the
+co-simulation participant to identify itself to</p>
+<p>the coupling service in a System Coupling analysis. For Linux
+systems, you need to</p>
+<p>escape the quotes or escape the space to have the name
+recognized with a space:</p>
+<p>ansys140.exe-scname=\”Solution 1\” or
+ansys140.exe-scname=”Solution\ 1” &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-scport port number &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the port on the host machine upon
+which the coupling service is listening</p>
+<p>for connections from co-simulation participants in a System
+Coupling analysis. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-ser &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Specifies the communication port number
+between ANSYS and CFX in an MFX</p>
+<p>analysis. &nbsp;<wbr></p>
+<p></td>
+</tr>
+<tr>
+<td width="12%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>-v &nbsp;<wbr></p>
+<p></td>
+<td width="87%" nowrap="nowrap"></p>
+<p>&nbsp;<wbr>Returns the ANSYS release number, update
+number, copyright date, customer</p>
+<p>number, and license manager version number.
+&nbsp;<wbr></p>
+<p></td>
+</tr>
+</tbody></p>
+<p>与此同时，官方的帮助文档中有关于Batch Mode的解释，对windows系统，前端运行采用指令：</p>
+<pre><code>&quot;&lt;drive&gt;:\Program Files\ANSYS Inc\V170\ANSYS\bin\&lt;platform&gt;\ansys170&quot; -b -i 
+ inputname -o outputname
+</code></pre>
+
+<p>即刚才所写的指令，而后台运行采用：</p>
+<pre><code>start /min &quot;&lt;drive&gt;:\Program Files\ANSYS Inc\V170\ANSYS\bin\&lt;platform&gt;\ansys170&quot; -b -i 
+ inputname -o outputname
+</code></pre>
+
+<p>更多关于linux等的运行方法可以参考ANSYS帮助文档中的Batch Mode词条。而如果需要运行多个任务，可以采用如下格式（To run multiple consecutive jobs on Windows systems, create and run a batch file containing commands similar to the example below:）：</p>
+<pre><code>set ANSYS170_PRODUCT=ANSYS
+set ANS_CONSEC=YES
+&quot;C:\Program Files\ANSYS Inc\V170\ANSYS\bin\&lt;platform&gt;\ansys170&quot; -b -i vm1.dat -o vm1.out
+&quot;C:\Program Files\ANSYS Inc\V170\ANSYS\bin\platform\ansys170&quot; -b -i vm2.dat -o vm2.out
+&quot;C:\Program Files\ANSYS Inc\V170\ANSYS\bin\platform\ansys170&quot; -b -i vm3.dat -o vm3.out
+</code></pre>
+
+<footer class="site-footer">
+<span class="site-footer-owner"><a href="https://hjrgrf.github.io">Back Home</a></span>
+<span class="site-footer-owner"><a href="https://github.com/hjrgrf/hjrgrf.github.com">Jared-H.Homepage</a> is maintained by <a href="https://github.com/hjrgrf">Jared H</a> (2016).</span>
+
+<span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+</footer>
+
+</section>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
