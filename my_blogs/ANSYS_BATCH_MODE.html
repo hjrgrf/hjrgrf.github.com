@@ -399,6 +399,2278 @@ set ANS_CONSEC=YES
 &quot;C:\Program Files\ANSYS Inc\V170\ANSYS\bin\platform\ansys170&quot; -b -i vm3.dat -o vm3.out
 </code></pre>
 
+<h2>ANSYS Product variables</h2>
+<p>上面表格中提到了-p的指令，该指令可以让我们选择使用那种Product进行分析（当然前提是你的Ansys包含此Product的License）。</p>
+<p>这个指令在某些时候比较有用，应为不同的Product之间可能存在一些不兼容的单元类型，这里可以参考连接
+<a href="http://muchong.com/html/201310/6552781.html">Link here</a>。链接中的楼主貌似就是因此而导致的问题。</p>
+
+
+<p>
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ summary="Product/Feature Names for Licensed Products" width="95%"
+ style='width:95.0%;border-collapse:collapse;mso-yfti-tbllook:1184'>
+ <thead>
+  <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+   <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+   <p class=MsoNormal align=center style='text-align:center;mso-pagination:
+   widow-orphan'><b><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+   font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Product<o:p></o:p></span></b></p>
+   </td>
+   <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+   <p class=MsoNormal align=center style='text-align:center;mso-pagination:
+   widow-orphan'><b><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+   font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'>Feature Names<o:p></o:p></span></b></p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='mso-yfti-irow:1'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Multiphysics Products</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS AIM Pro<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aim_mp1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Mechanical CFD-Flo<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ancfx*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Mechanical Emag<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ane3*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Multiphysics<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ane3fl*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Multiphysics Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>mpba*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS nCode DesignLife Products</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS nCode DesignLife Standard<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ancode_standard<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:9'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS nCode DesignLife Vibration<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ancode_vibration<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:10'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS nCode DesignLife Accelerated Testing<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ancode_acc_testing<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:11'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS nCode DesignLife Welds<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ancode_welds<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:12'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>&nbsp;ANSYS nCode DesignLife Parallel<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ancode_hpc<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:13'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS nCode DesignLife Thermo-Mechanical Module<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ancode_thermo_mech<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:14'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS nCode DesignLife Composites<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ancode_composite<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:15'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Structural Mechanics Products</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:16'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Composite Cure Simulation<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_lmat<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:17'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Customization Suite<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ans_act<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:18'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS DesignSpace<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>caewbpl3<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:19'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS DesignXplorer<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>dsdxm<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:20'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fatigue Module<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>dfatigue<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:21'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Mechanical Pro<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>mech_1*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:22'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Mechanical Premium<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>mech_2*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:23'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Mechanical Enterprise<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ansys*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:24'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Mechanical Enterprise Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>meba*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:25'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Professional NLS<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>prfnls<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:26'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Professional NLT<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>prf*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:27'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Rigid Body Dynamics<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>kinemat, dynamics<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:28'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Structural<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>struct*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:29'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Structural Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>stba*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:30'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Explicit Dynamics Products</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:31'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Autodyn<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_ad3dfull, acdi_adhpc, acdi_adprepost, int4nas<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:32'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Explicit STR<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_explprof<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:33'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS LS-DYNA<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>dyna*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:34'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluid Dynamics Products</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:35'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS BladeModeler<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_bldmdlr<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:36'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:37'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFD MHD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_mhd<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:38'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFD Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_solver<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:39'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFD-Flo<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_flo<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:40'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFD-Flo Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_pre, acfx_solver, acfx_nolimit, acfx_parallel<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:41'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_cfx<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:42'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX Advanced Turbulence Models<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_advanced_turbulence, acfx_turbulence_transition<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:43'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX Multiple Frames of Reference<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_mfr<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:44'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX Multi-Phase Flows<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_multiphase<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:45'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX Radiation Models<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_radiation<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:46'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX Reacting and Combusting Species<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_combustion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:47'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_cfx_solver, acfx_pre<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:48'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX-RIF Flamelet Library Generator<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_rif<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:49'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_fluent<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:50'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent Immersed Boundary Module<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_ib<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:51'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent PEM Fuel Cell Module<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_fcell<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:52'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent SOFC Fuell Cell Module<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_fcell<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:53'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_fluent_solver<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:54'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent V2F Module<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_v2f<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:55'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent for CATIA V5<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_ffc, acfd_ffc_pre<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:56'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent for CATIA V5 Pre<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_ffc_pre<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:57'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Fluent for CATIA V5 Analyst<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_ffc, acfd_ffc_pre, acfd_fluent_solver<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:58'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Polyflow<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_polyflow<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:59'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Polyflow BlowMolding<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_polyflow_blowmolding<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:60'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Polyflow Extrusion<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_polyflow_extrusion<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:61'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Polyflow Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_polyflow_solver<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:62'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS TurboGrid<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_turbogrid<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:63'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFX Turbo<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_cfx_turbo<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:64'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Vista TF<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_vista_tf<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:65'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Combustion and Chemical Reactions Products</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:66'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CHEMKIN-PRO<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_ckgraph, rd_ckpost, rd_ckpreproc, rd_ckui,
+  rd_ckcompute<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:67'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CHEMKIM-PRO HPC<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_ckcompute<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:68'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Collaborator License<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_ckgraph, rd_ckpost, rd_ckpreproc, rd_ckui,
+  rd_ckcompute<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:69'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ENERGICO<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_ckgraph, rd_ckpost, rd_ckpreproc, rd_ckui,
+  rd_ckcompute, rd_energico, rd_kineticsapi<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:70'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ENERGICO Add-on<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_energico, rd_kineticsapi<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:71'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Forte CFD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_fortejob, rd_forteui, rd_forteviz, rd_fortemesh,
+  rd_mechforte, rd_mechsoot<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:72'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS MFL Encrypted Member<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_mechmfc<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:73'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS MFL Encrypted Non-Member<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_mechmfc<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:74'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Reaction Workbench Add-on<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rd_mechwb, rd_reactionwbui<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:75'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HPC Products</span></b><span lang=EN-US
+  style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:76'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HPC<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>anshpc<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:77'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HPC Pack<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>anshpc_pack<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:78'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HPC Parametric Pack<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ans_dp_pack<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:79'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS LS-DYNA HPC<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>dysmp<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:80'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Pre/Post Processing and Geometry Interface
+  Products</span></b><span lang=EN-US style='mso-bidi-font-size:12.0pt;
+  font-family:宋体;mso-bidi-font-family:宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:81'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Autodyn PrepPost<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_adprepost<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:82'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Geometry Interface for CATIA V6<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_catv6_reader<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:83'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFD-Post<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfx_post<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:84'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS CFD PrepPost<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acfd_preppost<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:85'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Composite PrepPost<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acpreppost<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:86'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS DesignModeler<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>agppi<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:87'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Extended Meshing<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>amesh_extended<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:88'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Geometry Interfaces<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_geometry<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:89'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ICEM CFD Hexa<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aimed, aihexa, aimshcrt, aibfcart, aiiges, aiacis,
+  aioutput, aioutcfd, aidxf, aiquad, aimshcrt<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:90'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ICEM CFD Tetra/Prism<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aimed, aitetra, aiprism, aiiges, aiacis, aioutput,
+  aioutcfd, aidxf, aiquad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:91'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Interface for Team Center Engineering<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>pdmiman<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:92'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Geometry Interface for JT<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_jt_reader<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:93'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS LS-DYNA PrepPost<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>dynapp*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:94'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Mechanical Enterprise PrepPost<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>preppost*<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:95'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Meshing<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>amesh<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:96'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Mesh Morpher<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>paramesh<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:97'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS RBF Morph Module<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rbfmorph<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:98'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SpaceClaim CATIA V5 Interface<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_spaceclaim_catv5<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:99'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SpaceClaim Direct Modeler<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_spaceclaim_dirmod<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:100'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>GD&amp;T Module for SpaceClaim<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_spaceclaim_gdt<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:101'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>JT Open Reader for SpaceClaim<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_spaceclaim_jt<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:102'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Faceted Data Toolkit for SpaceClaim<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_spaceclaim_faceteddata<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:103'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>3D PDF Reader for SpaceClaim<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>a_spaceclaim_3dpdf<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:104'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>CADNexus/CAPRI CAE Gateway for CATIA V5<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>capricatv5<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:105'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for Autodesk<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>piautoin<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:106'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for CATIA V5<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>picatv5<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:107'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for CATIA V5 Linux<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>linux_catiav5<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:108'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for Creo Elements/Direct Modeling<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>1spacdes<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:109'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for Creo Parametric<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>piproe<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:110'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for NX<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>piug<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:111'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for Parasolid<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rdpara<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:112'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for SAT<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>rdacis<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:113'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for Solid Edge<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>pisoledg<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:114'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>Geometry Interface for SolidWorks<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>pisolwor<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:115'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Products</span></b><span lang=EN-US
+  style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:116'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Associate Mechanical and CFD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_a*, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:117'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Associate CFD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_a_cfd, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:118'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Associate HPC<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_a_hpc<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:119'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Fuel Cell Tools<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_fcell<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:120'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Meshing Tools<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_mesh, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:121'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Research Mechanical and CFD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_r*, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:122'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Research CFD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_r_cfd, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:123'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Research Electronics Thermal<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_r_et, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:124'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Research HPC<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_r_hpc<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:125'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Research LS-DYNA<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_r_dy*, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:126'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Research LS-DYNA HPC<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_dy_p<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:127'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Research Mechanical<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_r_me, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:128'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Research Polyflow<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_r_pf, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:129'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Teaching CFD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_t_cfd, aa_mcad<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:130'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Teaching Mechanical<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_t_me*, aa_mcad, aa_ds<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:131'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Academic Student<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_t_i*, aa_mcad, aa_ds<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:132'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS AIM Student<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aa_s_aim<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:133'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS EKM Products</span></b><span lang=EN-US
+  style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:134'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS EKM Analyst<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ekm_desktop, ekm_md<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:135'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS EKM Basic<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ekm_basic<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:136'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS EKM Shared<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ekm_user, ekm_md<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:137'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Offshore Products</span></b><span lang=EN-US
+  style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:宋体;
+  mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:138'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS AQWA DIFFRACTION<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_aqwags, acdi_aqwaline, acdi_aqwawave,
+  acdi_hydrodiff<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:139'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS AQWA SUITE<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_aqwadrft, acdi_aqwafer, acdi_aqwags,
+  acdi_aqwalbrm, acdi_aqwaline, acdi_aqwanaut, acdi_aqwawave, acdi_hydrodiff<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:140'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS AQWA SUITE with Coupled Cable Dynamics<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_aqwaline, acdi_aqwawave, acdi_cd-ags,
+  acdi_cd-drift, acdi_cd-fer, acdi_cd-libr, acdi_cd-naut, acdi_hydrodiff<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:141'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ASAS-OFFSHORE<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_asas, acdi_asaslink, acdi_asasnl,
+  acdi_asas-vis, acdi_beamst, acdi_comped, acdi_fatjack, acdi_loco, acdi_mass,
+  acdi_maxmin, acdi_post, acdi_postnl, acdi_prebeam, acdi_prenl, acdi_response,
+  acdi_splinter, acdi_wave, acdi_windspec, acdi_xtract, preppost<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:142'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS BEAMCHECK<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_asas-vis, acdi_beamst<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:143'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS FATJACK<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>acdi_fatjack<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:144'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Electronic Thermal Management Products</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:145'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Iceopt<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aice_opt<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:146'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Icepak<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aice_pak, aiiges, aice_mesher, aice_solv<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:147'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Icepak Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>aice_solv<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:148'>
+  <td colspan=2 valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Electromagnetics Products</span></b><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:149'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ALinks for EDA<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>al4allegro, al4ansoft, al4apd, al4boardstation,
+  al4encore, al4expedition, al4generic, al4powerpcb, al4virtuoso, al4zuken,
+  alinks_gui (2 per seat), al4cadvance, al4cds, al4gem, al4first<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:150'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ALinks for MCAD<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>xlate_iges, xlate_proe, xlate_step, xlate_inventor,
+  xlate_solidworks<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:151'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ALinks for MCAD CATIA<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>xlate_catia4, xlate_catia5<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:152'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ALinks for MCAD NX<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>xlate_unigraphics<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:153'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS ALinks for MCAD Parasolid<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>xlate_parasolid<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:154'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Designer Pre/Post Processor<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>al4ansoft, al4generic, designer_desktop, ensemble_gui,
+  nexxim_gui, nexxim_netlist, serenade_gui, symphony_gui, nexxim_dc,
+  serenade_linear<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:155'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Distributed Solve (DSO)<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ansoft_distrib, ansoft_distrib_engine,
+  ansoft_distrib_engine_mp<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:156'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Electronics HPC<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>hfsshpc<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:157'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Electronics HPC Pack<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>hfsshpc_pack<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:158'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HFSS<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ensemble_gui, hfss_desktop, hfss_gui, hfss_solve,
+  nexxim_gui<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:159'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HFSS Pre/Post Processor<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ensemble_gui, hfss_desktop, hfss_gui, nexxim_gui<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:160'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HFSS Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>hfss_solve<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:161'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HFSS-IE Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>hfssie_solve, hfssie_gui<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:162'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS HFSS-TR Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>hfss_transient_solve<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:163'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Maxwell 2D<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>m2dfs_ac, m2dfs_ax, m2dfs_ckt, m2dfs_cn, m2dfs_ed,
+  m2dfs_es, m2dfs_gui (5 per seat), m2dfs_ms, m2dfs_par, m2dfs_post (2 per
+  seat), m2dfs_solve, maxwell_desktop (5 per seat), maxwlspc, schem_gui,
+  m2dfs_th, m2dfs_tran, m2dfs_qs_solve (5 per seat)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:164'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Maxwell 3D<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>m2dfs_ac, m2dfs_ax, m2dfs_ckt, m2dfs_cn, m2dfs_ed,
+  m2dfs_es, m2dfs_gui' m2dfs_ms, m2dfs_par, m2dfs_post (2 per seat),
+  m2dfs_solve, m3dfs_gui (5 per seat), m3dfs_solve, maxwell_desktop (5 per
+  seat), maxwlspc, schem_gui, m2dfs_th, m2dfs_tran, m2dfs_qs_solve (5 per
+  seat), m3dfs_qs_solve<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:165'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Maxwell 3D Pre/Post Processor<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>m2dfs_gui (5 per seat), m3dfs_gui, maxwell_desktop
+  (5 per seat)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:166'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Maxwell 3D QS<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>m2dfs_gui (5 per seat), m3dfs_gui, maxwell_desktop
+  (5 per seat), m2dfs_qs_solve (5 per seat), m3dfs_qs_solve<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:167'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Optimetrics (For HFSS, Q3D Extractor, Maxwell)<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>optimetrics, ansoft_distrib_engine (2 per seat)<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:168'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS PExprt<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>m2dfs_gui, maxwell_desktop, maxwlspc, pemag, pexprt,
+  m2dfs_qs_solve<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:169'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Q3D Extractor<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>q3d_desktop, si2d_gui, si2d_solve, si3d_gui,
+  si3d_solve<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:170'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Q3D Extractor 3D Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>si3d_solve<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:171'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Q3D Extractor Pre/Post Processor<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>q3d_desktop, si2d_gui, si3d_gui<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:172'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS RF Option<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ensemble_25_sim, symphony_dt_sim, symphony_fd_sim,
+  nexxim_dc, nexxim_tran, nexxim_hb, nexxim_osc, nexxim_tvnoise,
+  filter_synthesis<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:173'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS RMxprt<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>maxwell_desktop, rmxprt_bcm, rmxprt_ecm, rmxprt_gui,
+  rmxprt_im, rmxprt_sym<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:174'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SI Option<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>nexxim_dc, nexxim_eye, nexxim_tran, nexxim_ami,
+  hfss_transient_solve, designer_hspice<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:175'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Simplorer<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>simplorer_desktop, simplorer_gui, simplorer_sim,
+  mspc_fws, DayBasic, DayIEEEDataInterface, SimplorerBasic, SimplorerKernel,
+  SimplorerSchematic, SimplorerLibPower, SimplorerLibMechanics,
+  SimplorerLibAutomotive, SimplorerLibHydraulic, SimplorerLibSensor<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:176'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Simplorer Advanced<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>simplorer_advanced, simplorer_CProgrInterface,
+  simplorer_desktop, simplorer_gui, simplorer_sim, mspc_fws, DayBasic,
+  DayIEEEDataInterface, SimplorerBasic. SimplorerCProgrInterface,
+  SimplorerFrequencyStepResp, SimplorerKernel, SimplorerMaxwellTr2D,
+  SimplorerOptimizer, SimplorerSchematic, SimplorerSIMULINK, SimplorerLibPower,
+  SimplorerLibMechanics, SimplorerLibAutomotive, SimplorerLibHydraulic,
+  SimplorerLibSensor, simplorer_vhdlams, simplorer_control<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:177'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Simplorer Basic<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>simplorer_CProgrInterface, simplorer_desktop,
+  simplorer_gui, simplorer_sim, mspc_fws, DayBasic, DayIEEEDataInterface,
+  SimplorerBasic, SimplorerKernel, SimplorerSchematic<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:178'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Simplorer Control Option<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>simplorer_control<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:179'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS Simplorer ML<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>simplorer_CProgrInterface, simplorer_desktop,
+  simplorer_gui, simplorer_sim, mspc_fws, DayBasic, DayIEEEDataInterface,
+  SimplorerBasic, SimplorerKernel, SimplorerSchematic, simplorer_vhdlams<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:180'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SIwave<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>al4generic, designer_desktop, ensemble_gui,
+  nexxim_gui, nexxim_netlist, siwave_gui, siwave_reporter, siwave_solver,
+  nexxim_dc, nexxim_eye, nexxim_tran, nexxim_ami, designer_hspice,
+  siwave_level1, siwave_level2, siwave_level3<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:181'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SIwave - DC<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>siwave_gui, siwave_level1<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:182'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SIwave PI<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>designer_desktop, ensemble_gui, nexxim_gui,
+  nexxim_netlist, siwave_gui, siwave_reporter, designer_hspice, siwave_pi_adv,
+  siwave_level1, siwave_level2<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:183'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SIwave PI Advisor Suite<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>siwave_gui, siwave_reporter, siwave_pi_adv<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:184'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SIwave Pre/Post Processor<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>al4generic, siwave_gui, siwave_reporter<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:185'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SIwave PSI Solver<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>siwave_psi_ac_solve<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:186;mso-yfti-lastrow:yes'>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>ANSYS SMPS Power Package<o:p></o:p></span></p>
+  </td>
+  <td valign=top style='padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+  lang=EN-US style='mso-bidi-font-size:12.0pt;font-family:宋体;mso-bidi-font-family:
+  宋体;mso-font-kerning:0pt'>simplorer_LibSMPS<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+</p>
+
 <footer class="site-footer">
 <span class="site-footer-owner"><a href="https://hjrgrf.github.io">Back Home</a></span>
 <span class="site-footer-owner"><a href="https://github.com/hjrgrf/hjrgrf.github.com">Jared-H.Homepage</a> is maintained by <a href="https://github.com/hjrgrf">Jared H</a> (2016).</span>
