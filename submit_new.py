@@ -30,3 +30,12 @@ def findhtml(new_files):
 new_blog=findhtml(new_files)
 
 open_new_blog=open(new_blog,'r+')
+
+
+
+
+
+
+
+
+
