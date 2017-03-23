@@ -27,9 +27,9 @@ def findhtml(new_files):
             new_blog=new_file
     return new_blog
 
-new_blog=findhtml(new_files)
+# new_blog=findhtml(new_files)
 
-open_new_blog=open(new_blog,'r+')
+# open_new_blog=open(new_blog,'r+')
 
 
 
