@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hilbert space & reproducing kernel</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* This file is deliberately empty */
+</style>
+<script type="text/javascript"  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</head>
+<body>
+<h1>Hilbert space and reproducing kernel</h1>
+<h2>1. Hilbert space</h2>
+<p>即希尔伯特空间，希尔伯特空间抽象的来说定义为“完备的内积空间”，而内积空间则是特殊的“赋范线性空间”，赋范线性空间的定义就是字面意思，在该空间E中有范数的定义，而且空间内可以定义加法和乘法，加法和乘法满足八大运算定理：</p>
+<ul>
+<li>加法交换；</li>
+<li>加法结合；</li>
+<li>存在零元素，与其他元素相加等于其他元素本身；</li>
+<li>存在负元素，零元素等于某一元素与其“负值”相加；</li>
+<li>乘法结合律；</li>
+<li>存在“1”元素，与其他元素相称等于其他元素，元素与“0”相乘为“0”；</li>
+<li>满足乘法分配律:(k+j)x=kx+jx，x属于该空间E，k和j属于E所在的数域；</li>
+<li>元素之间满足分配律：k(x+y)=kx+ky，x,y属于E，k属于E所在的数域。</li>
+</ul>
+<p>注意，上述不包含常见的乘法交换律，事实上，在线性代数中我们已经学过，欧式空间中就已经不包含乘法交换律了，简单来说，矩阵相乘的顺序不能改变。</p>
+<p>而赋范则表示空间中有范数定义，也就意味着，我们可以在该空间中衡量距离。内积空间相比于赋范空间，多了一个平行四边形法则的限制，即两边范数平方之和的两倍等于“两边之差的范数”与“两边之和的范数”之和。赋范线性空间的定义参考下图：</p>
+<p><img src="normed_linear_space.png" alt="normed_linear_space" /></p>
+<p>上图是基于线性空间对赋范线性空间的定义。显然，内积空间也可以认为是线性空间特例，在线性空间中定义内积，使得元素x与元素y的内积&lt;x,y&gt;也是空间内的元素，并且满足：</p>
+<ul>
+<li>&lt;x,x&gt;大于等于0，只有在x为0元素时，才取等；</li>
+<li>&lt;ax+by,z&gt;=a&lt;x,z&gt;+b&lt;y,z&gt;即分配律，其中x，y，z属于该空间，a和b属于该空间所在的数域；</li>
+<li>&lt;x,y&gt;=&lt;y,x&gt;*，即交换后的内积为交换前内积的共轭，当空间所在的数域为实数时，该条件退化为交换律：&lt;x,y&gt;=&lt;y,x&gt;。</li>
+</ul>
+<p>而希尔伯特（Hilbert）空间相比于上述空间多了一个完备性的条件。完备性往往体现在内积的定义上，抽象的说，完备性是指任何一个柯西列都收敛到此空间中的某个元素。</p>
+<p>事实上，因为内积本身可以用来定义范数，所以内积空间属于赋范空间。同时范数也可以用来定义距离，所以度量空间（即定义了距离的空间）包含了赋范空间，说了这么多空间，那么就再多说一个，Banach空间，可能翻译作巴拿赫空间吧，它定义为完备的赋范线性空间。</p>
+<p>好，总结一下，上面提到了哪些空间呢：</p>
+<ol>
+<li>线性空间(Linear space)</li>
+<li>度量空间(Metric space)</li>
+<li>赋范空间(Normed space)</li>
+<li>赋范线性空间(Normed Linear space)</li>
+<li>内积空间(Inner product space)</li>
+<li>巴拿赫空间(Banach space)</li>
+<li>希尔伯特空间(Hilbert space)</li>
+<li>欧式空间(Euclid space)</li>
+</ol>
+<p>这么多空间，有啥关系嘞？画一幅图给将来的自己看，这样就清晰了。</p>
+<p><img src="spaces-vn.png" alt="spaces-vn" /></p>
+<h2>Reproducing Kernel再生核</h2>
+<p>再生核函数是一类常用的核函数，首先给出一个数学化的定义：</p>
+<p>假设Hilbert空间\({\rm H}\)，由映射函数\(f:\chi  \to \mathbb{R}\)定义，而向量
+\(x \in \chi \)，定义函数\(k:\chi  \times \chi  \to \mathbb{R}\)，若函数\(k\)满足对任意的\(x \in \chi \)有\(k\left( { \cdot ,x} \right) \in {\rm H}\)，且对于任意\(f \in {\rm H},y \in \chi \)有：</p>
+<p>$$f\left( x \right) = {\left\langle {f\left(  \cdot  \right),k\left( { \cdot ,x} \right)} \right\rangle _{\rm H}}$$</p>
+<p>则称\(f\)为\({\rm H}\)的再生核函数。</p>
+<p>反过来，若对于狄拉克泛函有：</p>
+<p>$${\delta _x}\left( f \right) = f\left( x \right),\forall f \in {\rm H},x \in \chi $$</p>
+<p>连续，则称\({\rm H}\)为\(f\)的再生希尔伯特空间(Reproducing kernel Hilbert space, aka. RKHS)。可以推得：</p>
+<p>$$k\left( {x,y} \right) = f\left( x \right) = {\left\langle {f\left(  \cdot  \right),k\left( { \cdot ,x} \right)} \right\rangle _{\rm H}} = {\left\langle {k\left( { \cdot ,y} \right),k\left( { \cdot ,x} \right)} \right\rangle _{\rm H}}$$</p>
+<p>此外因为希尔伯特空间具有完备性，若序列\( {f_n} \)收敛到\(f\)，考虑到狄拉克泛函连续性有，对任意x：</p>
+<p>$$\mathop {\lim }\limits_{n \to \infty } {f_n}\left( x \right) = \mathop {\lim }\limits_{n \to \infty } {\delta _x}\left( {{f_n}} \right) = {\delta _x}\left( {f\left(  \cdot  \right)} \right) = f\left( x \right)$$</p>
+<p>RKHS法则：设\({\rm H}\)是由函数\(f:\chi  \to \mathbb{R}\)构成的Hilbert空间且有再生核\(k\)，则\({\rm H}\)是RKHS，此外\({\rm H}\)也是\(k\)的一个特征空间，此时对应的核映射为：</p>
+<p>$$\phi \left( x \right) = k\left( { \cdot ,x} \right),\forall x \in \chi $$</p>
+<p>通俗的来说，核映射就像是核函数的“一半”。但是对于同一个核函数，其核映射则可以对应多个。每个核映射对应一个希尔伯特空间，因此按道理一个核函数对应多个希尔伯特空间。但是按照RKHS的定理，认为每一个再生核只对应一个RKHS，有且只有一个。这个以后再给证明吧，今天先写这些。</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
