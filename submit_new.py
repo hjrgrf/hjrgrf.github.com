@@ -42,7 +42,7 @@ if new_blog != 0:
 	line=blog_cont.readline()
 	print line
 	line_tag=1
-	while line!='' and line!=None and line_tag<10:
+	while line!='' and line!=None and line_tag<12:
 		line=blog_cont.readline()
 		print line
 		line_tag=line_tag+1
@@ -67,7 +67,7 @@ if new_blog != 0:
 
 	line=head_file.readline()
 	line_tag=line_tag+1
-	while line!='' and line!=None and line_tag<15:
+	while line!='' and line!=None and line_tag<17:
 		line=head_file.readline()
 		new_blog_file.write(line)
 		line_tag=line_tag+1
@@ -78,7 +78,7 @@ if new_blog != 0:
 
 	line=head_file.readline()
 	line_tag=line_tag+1
-	while line!='' and line!=None and line_tag<20:
+	while line!='' and line!=None and line_tag<22:
 		line=head_file.readline()
 		new_blog_file.write(line)
 		line_tag=line_tag+1
