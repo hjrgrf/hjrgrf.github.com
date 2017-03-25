@@ -143,5 +143,10 @@ if new_blog != 0:
 	b_l_b.close()
 
 	shutil.copy('my_blogs/blogs_list.html','my_blogs/blogs_list_bk.html')
+	
+file_list_new=os.listdir('my_blogs')
+blogs=open('blogs.pkl','r+')
+pickle.dump(file_list_new,blogs)
+blogs.close()
 
 
